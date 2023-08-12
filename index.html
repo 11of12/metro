@@ -7,9 +7,16 @@
 
 </head>
 <body>
-    <h1>Hello</h1>
-    <button id="button">play sound</button>
+    <button id="metronome_start_button">Start</button>
+    <button id="metronome_stop_button">Stop</button>
+    <button id="metronome_subdivided_button">Subdivided</button>
 
-<script src="main.js"></script>
+    <select id="time_signature_select">
+        <option value="Four_Four">Four_Four</option>
+        <option value="Three_Four">Three_Four</option>
+        <option value="Twelve_Eight">Twelve_Eight</option>
+    </select>
+
+<script type="module" src="main.js"></script>
 </body>
 </html>

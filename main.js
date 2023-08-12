@@ -1,74 +1,38 @@
-SILENT = 0;
-STRONG = 1;
-WEAK = 2;
-SUBDIVISION = 3;
+import {Metronome, metronome_start, metronome_stop} from './metronome.js';
 
-DEFAULT_TEMPO = 60.0;
+async function main() {
+    let metronome = await new Metronome('Four_Four', 60, false);
 
-var metro = {
-    metronome_start: async function() {
-        tempo = metro.tempo;
-        metro.internal.delay_ms = 1000.0 * 60.0 / tempo;
-        metro.metronome_running = true;
-        while(metro.metronome_running){
-            if (metro.tempo != tempo) {
-                tempo = metro.tempo;
-                metro.internal.delay_ms = 1000.0 * 60.0 / tempo;
-            }
-            click_weight = metro.internal.get_next_weight(metro.internal.active_pattern)
-            if (click_weight == SILENT) {
-            }
-            else if (click_weight == STRONG) {
-                metro.internal.sounds.click_strong.play()
-            }
-            else if (click_weight == WEAK) {
-                metro.internal.sounds.click_weak.play()
-            }
-            else if (click_weight == SUBDIVISION) {
-                console.log("not implemented")
-            }
-            else {
-                console.log("not implemented")
-            }
+    const metronome_start_button = document.getElementById('metronome_start_button');
+    const metronome_stop_button = document.getElementById('metronome_stop_button');
+    const metronome_subdivided_button = document.getElementById('metronome_subdivided_button');
+    const time_signature_select = document.getElementById('time_signature_select');
 
-            await metro.internal.sleep(metro.internal.delay_ms)
+    time_signature_select.addEventListener('change', function() {
+        const selected_value = time_signature_select.value;
+        console.log('selected time signature: ', selected_value);
+        metronome_stop(metronome);
+        metronome.time_signature = metronome.time_signatures[selected_value];
+    });
+
+    metronome_start_button.addEventListener('click', function() {
+        metronome_start(metronome);
+    });
+
+    metronome_stop_button.addEventListener('click', function() {
+        metronome_stop(metronome);
+    });
+
+    metronome_subdivided_button.addEventListener('click', function() {
+        metronome_stop(metronome);
+        if (metronome.subdivided) {
+            metronome.subdivided = false;
+        } else {
+            metronome.subdivided = true;
         }
-    },
-    metronome_stop: function() {
-        metro.metronome_running = false;
-    },
+    });
 
-    patterns: {
-        three_four: [STRONG, WEAK, WEAK],
-        four_four: [STRONG, WEAK, WEAK, WEAK],
-    },
-    tempo: DEFAULT_TEMPO,
-    metronome_running: false,
-
-    internal: {
-        delay_ms: 1000.0 * 60.0 / DEFAULT_TEMPO,
-        current_position: 0,
-        active_pattern: 'four_four',
-        sounds: {
-            click_strong: new Audio('audio_files/click_strong.wav'),
-            click_weak: new Audio('audio_files/click_weak.wav')
-        },
-        sleep: function(ms) {
-            return new Promise(resolve => setTimeout(resolve, ms));
-        },
-        get_next_weight: function(pattern_key) {
-            length = metro.patterns[pattern_key].length
-            weight = metro.patterns[pattern_key][metro.internal.current_position];
-            console.log(metro.internal.current_position)
-            metro.internal.current_position = (metro.internal.current_position + 1) % length
-            return weight
-        },
-        change_pattern: function(pattern_key) {
-            metro.internal.current_position = 0;
-            metro.internal.active_pattern = pattern_key;
-        }
-    },
+    //metronome_start(metronome, time_signatures['Three_Four'], 60);
 }
 
-
-
+window.onload = main

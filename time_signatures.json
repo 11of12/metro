@@ -1,25 +1,27 @@
 {
-    "time_signatures": [
-        {
-            "name": "Three_Four",
-            "beats": 3,
+    "time_signatures": {
+        "Three_Four": {
+            "num_beats": 3,
+            "subdivision": false,
+            "subdivision_value": "eighth_note",
+            "subdivisions_per_beat": 2,
+            "subdivision_pattern": [1, 2, 1, 2, 1, 2]
+        },
+        "Four_Four": {
+            "num_beats": 4,
             "beats_value": "quarter_note",
             "subdivision": false,
-            "subdivision_value": "eighth_note"
+            "subdivision_value": "eighth_note",
+            "subdivisions_per_beat": 2,
+            "subdivision_pattern": [1, 2, 1, 2, 1, 2, 1, 2]
         },
-        {
-            "name": "Four_Four",
-            "beats": 3,
-            "beats_value": "quarter_note",
-            "subdivision": false,
-            "subdivision_value": "eighth_note"
-        },
-        {
-            "name": "Twelve_Eight",
-            "beats": 4,
+        "Twelve_Eight": {
+            "num_beats": 4,
             "beats_value": "dotted_quarter_note",
             "subdivision": true,
-            "subdivision_value": "eighth_note"
-        },
-    ]
+            "subdivision_value": "eighth_note",
+            "subdivisions_per_beat": 3,
+            "subdivision_pattern": [1, 2, 2, 1, 2, 2, 1, 2, 2, 1, 2, 2]
+        }
+    }
 }
