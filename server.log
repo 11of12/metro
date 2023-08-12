@@ -1,0 +1,12 @@
+nohup: ignoring input
+127.0.0.1 - - [12/Aug/2023 03:40:42] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Aug/2023 03:40:42] "GET /main.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Aug/2023 03:40:43] "GET /audio_files/click_strong.wav HTTP/1.1" 304 -
+127.0.0.1 - - [12/Aug/2023 03:40:43] "GET /audio_files/click_weak.wav HTTP/1.1" 304 -
+127.0.0.1 - - [12/Aug/2023 03:40:43] "GET /favicon_io/favicon-16x16.png HTTP/1.1" 304 -
+127.0.0.1 - - [12/Aug/2023 03:41:02] "GET /favicon_io/favicon-16x16.png HTTP/1.1" 304 -
+127.0.0.1 - - [12/Aug/2023 03:42:04] "GET / HTTP/1.1" 304 -
+127.0.0.1 - - [12/Aug/2023 03:42:04] "GET /main.js HTTP/1.1" 304 -
+127.0.0.1 - - [12/Aug/2023 03:42:05] "GET /audio_files/click_strong.wav HTTP/1.1" 304 -
+127.0.0.1 - - [12/Aug/2023 03:42:05] "GET /audio_files/click_weak.wav HTTP/1.1" 304 -
+127.0.0.1 - - [12/Aug/2023 03:42:05] "GET /favicon_io/favicon-16x16.png HTTP/1.1" 304 -

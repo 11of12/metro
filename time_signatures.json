@@ -1,0 +1,25 @@
+{
+    "time_signatures": [
+        {
+            "name": "Three_Four",
+            "beats": 3,
+            "beats_value": "quarter_note",
+            "subdivision": false,
+            "subdivision_value": "eighth_note"
+        },
+        {
+            "name": "Four_Four",
+            "beats": 3,
+            "beats_value": "quarter_note",
+            "subdivision": false,
+            "subdivision_value": "eighth_note"
+        },
+        {
+            "name": "Twelve_Eight",
+            "beats": 4,
+            "beats_value": "dotted_quarter_note",
+            "subdivision": true,
+            "subdivision_value": "eighth_note"
+        },
+    ]
+}
