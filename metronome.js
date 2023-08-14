@@ -54,11 +54,11 @@ export async function metronome_start(metronome) {
         delay_ms = 1000 * 60 / beats_per_minute;
         console.log(metronome.time_signature['num_beats']);
         for (let i = 0; i < metronome.time_signature['num_beats']; i++) {
-            console.log(i)
             pattern.push(STRONG_BEAT);
         }
     }
 
+    console.log("Made it Here")
     metronome.is_running = true
     console.log(pattern);
 
@@ -67,13 +67,11 @@ export async function metronome_start(metronome) {
         position  = (position + 1) % pattern.length;
 
         if (pattern[position] == STRONG_BEAT) {
-            metronome.click_strong.play()
-        } else if (pattern[position] == WEAK_BEAT) {
-            metronome.click_weak.play()
-        } else {
-            console.log('pattern value not implemented: ', pattern[position])
+            await metronome.click_strong.play()
         }
-
+        if (pattern[position] == WEAK_BEAT) {
+            await metronome.click_weak.play()
+        }
         await sleep(delay_ms);
     }
 }

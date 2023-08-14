@@ -22,6 +22,14 @@
             "subdivision_value": "eighth_note",
             "subdivisions_per_beat": 3,
             "subdivision_pattern": [1, 2, 2, 1, 2, 2, 1, 2, 2, 1, 2, 2]
+        },
+        "The_Grid": {
+            "num_beats": 13,
+            "beats_value": "dotted_quarter_note",
+            "subdivision": true,
+            "subdivision_value": "eighth_note",
+            "subdivisions_per_beat": 3,
+            "subdivision_pattern": [1, 2, 2, 1, 2, 1, 2, 2, 1, 2, 1, 2, 2, 1, 2, 1, 2, 1, 2, 2, 1, 2, 1, 2, 2, 1, 2, 1, 2, 2, 1, 2]
         }
     }
 }
